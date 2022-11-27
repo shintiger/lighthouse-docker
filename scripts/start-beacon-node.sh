@@ -59,6 +59,7 @@ exec lighthouse \
 	--eth1-endpoints $VOTING_ETH1_NODES \
 	--http \
 	--execution-endpoints=http://geth:8551
+	--jwt-secret=/geth/jwtsecret
 	--http-address 0.0.0.0 \
 	$METRICS_PARAMS \
 	$GRAFFITI_PARAM \

@@ -58,8 +58,8 @@ exec lighthouse \
 	beacon_node \
 	--eth1-endpoints $VOTING_ETH1_NODES \
 	--http \
-	--execution-endpoints=http://geth:8551
-	--execution-jwt=/geth/jwtsecret
+	--execution-endpoints http://geth:8551 \
+	--execution-jwt /geth/jwtsecret \
 	--http-address 0.0.0.0 \
 	$METRICS_PARAMS \
 	$GRAFFITI_PARAM \

@@ -16,6 +16,15 @@ services:
         env_file: .env
         command: sh /root/scripts/start-beacon-node.sh
         restart: on-failure
+    beacon_workspace:
+        image: sigp/lighthouse:${LIGHTHOUSE_VERSION}
+        volumes:
+            - ./lighthouse-data:/root/.lighthouse
+            - ./geth-data/geth:/geth
+            - ./scripts:/root/scripts:ro
+        env_file: .env
+        command: sh /root/scripts/start-beacon-workspace.sh
+        restart: unless-stopped
     validator_client:
         image: sigp/lighthouse:${LIGHTHOUSE_VERSION}
         volumes:

@@ -7,6 +7,8 @@ services:
             - ./lighthouse-data:/root/.lighthouse
             - ./geth-data/geth:/geth
             - ./scripts:/root/scripts:ro
+        depends_on:
+            - geth
         ports:
             - 5052:5052/tcp
             - 5053:5053/tcp

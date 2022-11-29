@@ -14,7 +14,7 @@ services:
             - 9000:9000/tcp
             - 9000:9000/udp
         env_file: .env
-        command: sh /root/scripts/start-beacon-workspace.sh
+        command: sh /root/scripts/start-beacon-node.sh
         restart: on-failure
     validator_client:
         image: sigp/lighthouse:${LIGHTHOUSE_VERSION}

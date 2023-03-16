@@ -18,7 +18,7 @@ services:
         env_file: .env
         command: sh /root/scripts/start-beacon-node.sh
         restart: unless-stopped
-        cpus: "1.8"
+        cpus: 1.8
         mem_reservation: "4000M"
         mem_limit: "1000M"
     validator_client:
@@ -46,6 +46,6 @@ services:
         env_file: .env
         command: /root/scripts/start-geth.sh
         restart: unless-stopped
-        cpus: "1.8"
+        cpus: 1.8
         mem_reservation: "4000M"
         mem_limit: "1000M"
